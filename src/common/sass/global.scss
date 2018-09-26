@@ -1,0 +1,63 @@
+@import "mixins.scss";
+@import "functions.scss";
+
+body {
+  background: #f1f1f1;
+}
+
+.img-hold{
+    background-image:url(//s1.ymatou.com/evt/images/seller/placeholder@300x300.png);
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center;
+}
+
+.module-hold{
+    // background-image:url(http://s1.ymatou.com/evt/images/activity/placeholder@300x300.png);
+    background-color:#fff;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center;
+}
+
+// 浮层
+.ymt-mask {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 100;
+}
+
+.wechat-mask{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background:none;
+    z-index: 100;
+}
+
+//  * toast显示日志
+.ymtui-toast{
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left:50%;
+    color:#fff;
+    text-align: center;
+    border-radius: torem(4);
+    padding:torem(6) torem(12);
+    font-size:torem(30);
+    background-color: rgba(0, 0, 0, 0.58);
+    transition: transform 0.25s ease-in-out;
+    transform:translate(-50%,-50%) scaleY(0);
+    word-break: break-all;
+    &.show{
+        transform:translate(-50%,-50%) scaleY(1);
+    }
+}

@@ -1,0 +1,32 @@
+<div class="header global-wrap">
+    <div class="inner">
+        <div class="header-search clearfix">
+            <h1 class="logo"><a href="http://www.ymatou.com" target="_blank" title="首页"></a></h1>
+            <form class="search-wrap J_wrap-search" action="http://www.ymatou.com/products">
+                <input class="input-search J_input-search" name="k" value ="{{keyword}}">
+                <div class="search-recomend" id="search-recomend">
+                    <!--<dl>
+                        <dt>最近搜索<i class="dust-btn"></i></dt>
+                        <dd>RMK</dd>
+                    </dl>-->
+                </div>
+                <button class="header-icon search-btn J_btn-search" type="submit"></button>
+            </form>
+            <div class="qrapp"></div>
+        </div>
+        <div style="width: 100%;height: 1px;overflow: hidden"></div>
+        <div class="menu-nav">
+            <a href="//www.ymatou.com" class="menu-item" id="index-tab" title="首页">首页</a>
+            <a href="//www.ymatou.com/home/todaybuy" id="todaybuy-bt" class="menu-item" title="今日限时抢">今日限时抢</a>
+            <a href="//www.ymatou.com/home/yht/" id="ymt-bt" class="menu-item" title="洋货集">洋货集</a>
+            <a href="//www.ymatou.com/home/cabs/" id="categoryMenu" title="分类" class="menu-item">分类 <i class="c-down"></i></a>
+            <div class="category-box">
+                <div class="category-downlist" style="display:none">
+                    <div class="category-wrap">
+                        {{> categoryList}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

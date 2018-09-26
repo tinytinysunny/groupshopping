@@ -1,0 +1,160 @@
+@charset "UTF-8";
+$rem: 1rem/16;
+$imgPath: '../../assets/images/';
+
+/**
+ * 根据dpr设置字体大小
+ * @param {string} $font-size 字体大小
+ */
+
+@mixin flex($justify: flex-start, $align: flex-start, $wrap: nowrap) {
+    //flex布局
+    display: flex;
+    display: -webkit-flex; //横向单行/多行
+    flex-flow: row $wrap;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: $wrap; //横向对齐方式
+    justify-content: $justify;
+    -webkit-justify-content: $justify; //纵向对齐方式
+    align-items: $align;
+    -webkit-align-items: $align;
+}
+
+//播放按钮
+@mixin btn-play($size: 67.5) {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url(#{$imgPath}/btn_play.png) center center no-repeat;
+    background-size: $rem * $size $rem * $size;
+}
+
+//弹性布局(纵向)
+@mixin flex-column($justify: flex-start, $align: flex-start, $wrap: nowrap) {
+    //flex布局
+    display: flex;
+    display: -webkit-flex; //纵向单行/多行
+    flex-flow: column $wrap;
+    -webkit-flex-direction: column;
+    -webkit-flex-wrap: $wrap; //纵向对齐方式
+    justify-content: $justify;
+    -webkit-justify-content: $justify; //横向对齐方式
+    align-items: $align;
+    -webkit-align-items: $align;
+}
+
+@mixin font-dpr($font-size) {
+    font-size: $font-size;
+    [data-dpr="2"] & {
+        font-size: $font-size * 2;
+    }
+    [data-dpr="3"] & {
+        font-size: $font-size * 3;
+    }
+}
+
+//清除浮动
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+
+/**
+ * 文字多行截断
+ * @param  {Number} $lineNum 行数
+ */
+
+@mixin text-truncate($lineNum:2) {
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $lineNum;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+}
+
+
+/**
+ * 箭头
+ * @param {string} $length 长度
+ * @param {string} $color 颜色
+ * @param {string} $angle 角度
+ */
+
+@mixin arrow($length, $color, $angle) {
+    content: '';
+    display: block;
+    position: absolute;
+    width: $length;
+    height: $length;
+    border-width: 2px;
+    border-style: solid;
+    border-color: $color $color transparent transparent;
+    transform: translate(0, -50%) rotate($angle);
+}
+
+@mixin calc($property, $expression) { 
+  #{$property}: -webkit-calc(#{$expression}); 
+  #{$property}: calc(#{$expression}); 
+} 
+
+//生成字体
+@mixin fontface($fontpath) {
+    font-family: "iconfont";
+    src: url(#{$fontpath}.eot#iefix) format('embedded-opentype'),
+    url(#{$fontpath}.eot#iefix) format('embedded-opentype'),
+    url(#{$fontpath}.woff) format('woff'),
+    url(#{$fontpath}.ttf) format('truetype'),
+    url(#{$fontpath}.svg#svgFontName) format('svg');
+}
+
+@mixin iphoneX-top{
+    @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio:3){
+        top: constant(safe-area-inset-top);
+        position: absolute;
+    }
+}
+
+// footer
+.more-btn {
+    height: $rem*40;
+    overflow: hidden;
+    text-align: right;
+    margin: 0 $rem*10;
+    border-bottom-left-radius: $rem*20;
+    border-bottom-right-radius: $rem*20;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: $rem*15;
+    span {
+        margin-top: $rem*8;
+        display: inline-block;
+        color: #fff;
+        line-height: $rem*24;
+        position: relative;
+        padding: 0 $rem*15 0 $rem*10;
+        @include font-dpr(17px);
+        margin-right: $rem*18; // &:after{
+        //   content: '';
+        //   position:absolute;
+        //   @include arrow($rem*7,#fff,45deg);
+        //   right:0;
+        //   top:$rem*12;
+        // }
+        // &:before{
+        //   position:absolute;
+        //   @include arrow($rem*7,#fff,45deg);
+        //   right:$rem*5;;
+        //   top:$rem*12;
+        // }
+    }
+}

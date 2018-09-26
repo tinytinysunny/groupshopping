@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+        <title>大礼包</title>
+        <meta name="format-detection" content="telephone=no,address=no,email=no">
+        <meta http-equiv="Cache-Control" content="no-transform">
+        <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+        <link rel="dns-prefetch" href="//s1.ymatou.com">
+        <link rel="dns-prefetch" href="//jsapi.ymatou.com">
+        <link rel="dns-prefetch" href="//staticontent.ymatou.com">
+        <link rel="dns-prefetch" href="//pic1.ymatou.com">
+        <link rel="preconnect" href="//s1.ymatou.com" crossorigin="">
+        <link rel="preconnect" href="//pic1.ymatou.com" crossorigin="">
+        <link rel="preconnect" href="//jsapi.ymatou.com" crossorigin="">
+        <link rel="preconnect" href="//staticontent.ymatou.com" crossorigin="">
+
+        <script async="" src="//s1.ymatou.com/bpm/build/gtm/1.2.7/detection.js"></script>
+        <script>
+        !(function (f, p) { var c = navigator.userAgent, d = /iphone|ipad|ipod/i.test(c), b = /android/ig.test(c), a = /Mobile/i.test(c) || d || b; var o = document.querySelector("[name=viewport]") || (function () { var q = document.createElement("meta"); q.name = "viewport" })(), k = o.content || "", j = k.match(/initial\-scale=([\d\.]+)/), i = k.match(/width=([\d\.]+)/), m = d ? window.devicePixelRatio ? Math.min(window.devicePixelRatio, 3) : 1 : 1, e = document.documentElement, n = m * (e.dataset.mw || 750), m = 1, g = 1 / m, h; f = f || 320; p = p || 16; if (o) { if (j) { k = k.replace(/initial\-scale=([\d\.]+)/, "initial-scale=" + g) } else { k += ",initial-scale=" + g } o.content = k.replace(/minimum\-scale=([\d\.]+)/, "minimum-scale=" + g).replace(/maximum\-scale=([\d\.]+)/, "maximum-scale=" + g) } else { o = doc.createElement("meta"); o.name = "viewport"; o.content = k; e.firstElementChild.appendChild(o) } var l = function () { var r = e.getBoundingClientRect().width; var q = Math.min(r, n) / f * p; e.style.fontSize = q + "px" }; if (a) { window.addEventListener("resize", function () { clearTimeout(h); h = setTimeout(l, 300) }, false); l() } else { e.style.fontSize = "16px" } })(375, 16);
+        </script>
+        <style>
+        body {
+            font-family: "Microsoft YaHei";
+        }
+         #outputlog .table .td .text {
+            font-size: 16px!important;
+        }
+    </style>
+    </head>
+
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <script type="text/javascript" src="//s1.ymatou.com/bpm/build/zepto/1.2.0/zepto.min.js"></script>
+    <script type="text/javascript" src="//s1.ymatou.com/bpm/build/ymtapi_unity/3.1.6/ymtapi_unity.min.js"></script>
+     <script>
+        (function(w, d, s, l, i, o) {
+            w['YmatouAnalyticsobject'] = o;
+            w[o] = w[o] || function() {
+                (w[o].q = w[o].q || []).push(arguments)
+            }
+
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var date = new Date(),
+                f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = '//www.googletagmanager.com/gtm.js?rnd=' + date.getFullYear() + (date.getMonth() + 1) + date.getDate() + '&id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-T6W8Z5', '_dc_');
+        </script>
+        <!-- End Google Tag Manager -->
+  </body>
+</html>

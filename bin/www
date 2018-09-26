@@ -1,0 +1,101 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+var exec = require('child_process').exec,
+    conf = require('../config.js');
+
+var log = require('../util').log;
+try {
+	//create Log folders
+	var mkdir = exec('mkdir ' + conf.LogConfig.logDir);
+	//error of create log folders
+	//mkdir.stderr.on('data', function (data) {
+	//    console.error('error:' + data);
+	//});    
+   
+	var app = require('../app.js');
+	// var debug = require('debug')('node-sq-v2:server');
+
+	var http = require('http');
+	/** 
+	 * Get port from environment and store in Express.
+	 */
+
+	var port = Number(process.env.PORT || conf.port);
+	app.set('port', port);
+
+	/**
+	 * Create HTTP server.
+	 */
+	var server = http.createServer(app);
+
+
+	/**
+	 * Listen on provided port, on all network interfaces.
+	 */
+	server.listen(port);
+	server.on('error', onError);
+	server.on('listening', onListening);
+}
+catch (e) {
+
+    log.Error({Message: "服务器发生异常： " + JSON.stringify(e)});
+    if(e.message) {
+        log.Error({Message: "服务器发生异常(错误信息): " + e.message});
+    }
+    if(e.stack) {
+        log.Error({Message: "服务器发生异常(CallStack信息): " + e.stack});
+    }
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+	log.Error({Message: "服务器发生异常： " + JSON.stringify(error)});
+    if(error.message) {
+        log.Error({Message: "服务器发生异常(错误信息): " + error.message});
+    }
+    if(error.stack) {
+        log.Error({Message: "服务器发生异常(CallStack信息): " + error.stack});
+    }
+
+    console.log('======================================');
+    if (error.syscall !== 'listen') {
+        throw error;
+    }
+
+    var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
+
+    // handle specific listen errors with friendly messages
+    switch (error.code) {
+    case 'EACCES':
+        console.error(bind + ' requires elevated privileges');
+        process.exit(1);
+        break;
+    case 'EADDRINUSE':
+        console.error(bind + ' is already in use');
+        process.exit(1);
+        break;
+    default:
+        throw error;
+    }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+    var addr = server.address();
+    var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+
+    // debug('Listening on ' + bind);
+
+    console.log('**********************************************');
+    console.log('    run server http://127.0.0.1 ' + bind);
+    console.log('**********************************************');
+}

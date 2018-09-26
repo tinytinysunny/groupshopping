@@ -1,0 +1,66 @@
+{
+  "GetTaskList": {
+    "host": "taskbiz.iapi.ymatou.com",
+    "api": "/api/task/gettasklist"
+  },
+  "GetAwardList": {
+    "host": "evtlottery.iapi.ymatou.com",
+    "api": "/api/activity/GetAwardList"
+  },
+  "Lottery": {
+    "host": "evtlottery.iapi.ymatou.com",
+    "api": "/api/Activity/Lottery"
+  },
+  "BuyLottery": {
+    "host": "evtlottery.iapi.ymatou.com",
+    "api": "/api/activity/BuyLottery"
+  },
+  "getCheckinList": {
+    "host": "checkin.iapi.ymatou.com",
+    "api": "/api/checkin/get"
+  },
+  "postCheckin": {
+    "host": "checkin.iapi.ymatou.com",
+    "api": "/api/checkin/post"
+  },
+  "getUserCoin": {
+    "host": "exp.iapi.ymatou.com",
+    "api": "/api/getUserCoin"
+  },
+  "getUserCoinRecords": {
+    "host": "exp.iapi.ymatou.com",
+    "api": "/api/getUserCoinRecords"
+  },
+  "getCoinCouponList": {
+    "host": "couponmarketingbiz.iapi.ymatou.com",
+    "api": "/api/coupon/getcoincouponlist"
+  },
+  "exchangeCoin": {
+    "host": "couponmarketingbiz.iapi.ymatou.com",
+    "api": "/api/coupon/exchangecoincoupon"
+  },
+  "getFirstProductInfo": {
+    "host":"evtplay.iapi.ymatou.com",
+    "api":"/api/ActivityBag/GetFirstProductInfo"
+  },
+  "ReceiveCoin": {
+    "host":"evtplay.iapi.ymatou.com",
+    "api":"/api/ActivityBag/ReceiveCoin"
+  },
+  "GetUserThirdPartyAccountDto":{
+    "host":"userservice.iapi.ymatou.com",
+    "api":"/json/reply/GetUserThirdPartyAccountDto"
+  },
+  "receiveRegister":{
+    "host":"checkin.iapi.ymatou.com",
+    "api":"/api/receiveCoin/receiveRegister"
+  },
+  "hasReceiveCoin":{
+    "host":"checkin.iapi.ymatou.com",
+    "api":"/api/receiveCoin/hasReceiveCoin"
+  },
+  "appPopup":{
+    "host":"homebiz.iapi.ymatou.com",
+    "api":"/api/appPopup/getPopupType"
+  }
+}

@@ -1,0 +1,4 @@
+// rem单位换算
+@function torem($num){
+    @return #{$num/32}rem;
+}
