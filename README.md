@@ -1,7 +1,6 @@
-# membership.m.ymatou.com
+# A vue project
 
-> membership for ymatou
-
+>
 ## Build Setup
 
 ``` bash
